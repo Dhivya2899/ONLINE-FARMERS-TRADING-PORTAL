@@ -29,7 +29,8 @@ using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStri
 {
 con.Open();
 SqlCommand cmd = new SqlCommand("select * from tbl_signup where
-email=@email and password=@password ", con); cmd.Parameters.AddWithValue("@email", txt_email.Text); cmd.Parameters.AddWithValue("@password", txt_pass.Text); cmd.ExecuteNonQuery();
+email=@email and password=@password ", con); cmd.Parameters.AddWithValue("@email", txt_email.Text);
+cmd.Parameters.AddWithValue("@password", txt_pass.Text); cmd.ExecuteNonQuery();
 SqlDataAdapter sda = new SqlDataAdapter(cmd); DataTable dt = new DataTable();
 sda.Fill(dt);
 if (dt.Rows.Count != 0)
